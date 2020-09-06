@@ -26,4 +26,4 @@ How to use?:
 * Make you s3 bucket public and update CORS ![AWS](https://aws.amazon.com/premiumsupport/knowledge-center/read-access-objects-s3-bucket/) or ![SCW](https://www.scaleway.com/en/docs/object-storage-cors/)
 * Put in to `scan.php` url to you bucket.
 
-#AND YOU ARE DONE!
+##AND YOU ARE DONE!
