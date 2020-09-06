@@ -27,4 +27,4 @@ How to use?:
 * Put in to `scan.php` url to you bucket.
 
 AND YOU ARE DONE!
-Special thanks fo ![yaroslav4167](https://github.com/yaroslav4167)
+Special thanks for ![yaroslav4167](https://github.com/yaroslav4167)
