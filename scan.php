@@ -1,6 +1,6 @@
 <?php
 
-$s3url = "https://scw-muffin-test.s3.nl-ams.scw.cloud";
+$s3url = "https://";
 
 // Output the directory listing as JSON
 
