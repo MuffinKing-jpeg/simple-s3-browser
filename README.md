@@ -1,6 +1,6 @@
 # simple-s3-browser
 
-How to use?
+How to use?:
 0. Download files and drop to your site root
 1. Put in to header tag '<link rel="stylesheet" href="filemanager.css" />'.  Put in the end of <body>
   '''html
