@@ -7,7 +7,7 @@ How to use?:
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="script.js"></script>
   ```
-* Put in to body , or any <div>
+* Put in to body , or any div
   ```html
   <div class="filemanager">
         <div class="search">
