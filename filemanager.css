@@ -1,0 +1,476 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+/*-------------------------
+	File manager
+-------------------------*/
+
+.filemanager {
+  width: 95%;
+  max-width: 95%;
+  position: relative;
+}
+
+@media all and (max-width: 965px) {
+  .filemanager {
+    margin: 30px auto 0;
+    padding: 1px;
+  }
+}
+
+/*-------------------------
+	Breadcrumps
+-------------------------*/
+
+.filemanager .breadcrumbs {
+  color: #9f1cff;
+  margin-left: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 35px;
+  font-family: Racing Sans One;
+}
+
+.filemanager .breadcrumbs a:link,
+.breadcrumbs a:visited {
+  color: #9f1cff;
+  text-decoration: none;
+}
+
+.filemanager .breadcrumbs a:hover {
+  text-decoration: underline;
+  filter: invert(100%);
+}
+
+.filemanager .breadcrumbs .arrow {
+  color: #9f1cff;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+/*-------------------------
+	Search box
+-------------------------*/
+
+.filemanager .search {
+  position: absolute;
+  padding-right: 30px;
+  cursor: pointer;
+  right: 0;
+  font-size: 17px;
+  color: #ffffff;
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+.filemanager .search:before {
+  content: "";
+  position: absolute;
+  margin-top: 12px;
+  width: 10px;
+  height: 11px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  right: 8px;
+}
+
+.filemanager .search:after {
+  content: "";
+  width: 3px;
+  height: 10px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  position: absolute;
+  top: 23px;
+  right: 6px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.filemanager .search input[type="search"] {
+  border-radius: 2px;
+  color: #4d535e;
+  background-color: #fff;
+  width: 250px;
+  height: 44px;
+  margin-left: -215px;
+  padding-left: 20px;
+  text-decoration-color: #4d535e;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  display: none;
+  outline: none;
+  border: none;
+  padding-right: 10px;
+  -webkit-appearance: none;
+}
+
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #4d535e;
+}
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #4d535e;
+  opacity: 1;
+}
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #4d535e;
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #4d535e;
+}
+
+/*-------------------------
+	Content area
+-------------------------*/
+
+.filemanager .data {
+  z-index: -1;
+  overflow: hidden;
+  padding-bottom: 8vh;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.filemanager .data li {
+  border-radius: 3px;
+  background-color: #37114d8d;
+  list-style-type: none;
+  margin: 10px;
+  display: flex;
+  width: 47%;
+  height: auto;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  position: relative;
+  overflow: hidden;
+  padding: 0.3em;
+  cursor: pointer;
+  justify-content: space-between;
+  box-sizing: border-box;
+  transition: 0.3s background-color;
+}
+
+.filemanager .data li:hover {
+  background-color: #ffffff4b;
+}
+
+.filemanager .data li a {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.filemanager .data li .name {
+  color: #9f1cff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+  white-space: nowrap;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  width: 130px;
+  text-overflow: ellipsis;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.filemanager .data li:hover .name {
+  filter: invert(100%);
+}
+
+.filemanager .data li:hover .details {
+  filter: invert(100%);
+}
+.filemanager .data li .details {
+  color: #a01cffb3;
+  font-size: 16px;
+  font-weight: 400;
+  white-space: nowrap;
+  position: relative;
+  display: inline;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.filemanager .nothingfound {
+  background-color: #3e2564;
+  width: 23em;
+  height: 21em;
+  margin: 0 auto;
+  display: none;
+  font-family: Arial;
+}
+
+.filemanager .nothingfound .nofiles {
+  margin: 30px auto;
+  top: 3em;
+  border-radius: 50%;
+  position: relative;
+  background-color: #d72f6e;
+  width: 11em;
+  height: 11em;
+  line-height: 11.4em;
+}
+.filemanager .nothingfound .nofiles:after {
+  content: "×";
+  position: absolute;
+  color: #ffffff;
+  font-size: 14em;
+  margin-right: 0.092em;
+  right: 0;
+}
+
+.filemanager .nothingfound span {
+  margin: 0 auto auto 6.8em;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  height: 13px;
+  position: relative;
+  top: 2em;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes showSlowlyElement {
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  0% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Standard syntax */
+@keyframes showSlowlyElement {
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  0% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+.fileInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: auto;
+  height: 100%;
+  padding-left: 8%;
+}
+
+/*-------------------------
+		Icons
+-------------------------*/
+.icon {
+  font-size: 23px;
+}
+/*.icon.folder {
+  display: flex;
+  margin: 1em;
+  position: relative;
+  background-color: transparent;
+  overflow: hidden;
+} */
+
+li:hover .imgFolder {
+  filter: invert(100%);
+}
+.imgFile,
+.imgFolder {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  align-content: center;
+  vertical-align: middle;
+  position: relative;
+  text-decoration: none;
+  background-color: transparent;
+  margin-left: 15px;
+}
+.files {
+  display: flex;
+}
+.icon.file,
+.icon.folder {
+  text-align: center;
+  font-family: Racing Sans One;
+  color: #9f1cff;
+  vertical-align: middle;
+  display: flex;
+  position: relative;
+  overflow: visible;
+  align-items: center;
+  text-decoration: none;
+  height: 100%;
+  width: 100%;
+  filter: drop-shadow(0 0 1px black);
+  justify-content: center;
+  background-color: transparent;
+  /* box-shadow: 1.74em -2.1em 0 0 #A4A7AC inset; */
+}
+.icon.file:first-line {
+  font-size: 13px;
+  font-weight: 700;
+}
+@media all and (min-width: 1400px) {
+  .filemanager .data li {
+    width: 31%;
+    margin: 1%;
+  }
+
+}
+@media all and (max-width: 965px) {
+  .filemanager .data li {
+    width: 100%;
+    margin: 5px 0;
+  }
+  .icon.file,
+  .icon.folder {
+	  width: 100%;
+  }
+  .imgFile,
+  .imgFolder{
+	  width: 100%;
+  }
+}
+/*
+
+.icon.file.f-avi,
+.icon.file.f-flv,
+.icon.file.f-mkv,
+.icon.file.f-mov,
+.icon.file.f-mpeg,
+.icon.file.f-mpg,
+.icon.file.f-mp4,
+.icon.file.f-m4v,
+.icon.file.f-wmv {
+	box-shadow: 1.74em -2.1em 0 0 #7e70ee inset;
+}
+.icon.file.f-avi:after,
+.icon.file.f-flv:after,
+.icon.file.f-mkv:after,
+.icon.file.f-mov:after,
+.icon.file.f-mpeg:after,
+.icon.file.f-mpg:after,
+.icon.file.f-mp4:after,
+.icon.file.f-m4v:after,
+.icon.file.f-wmv:after {
+	border-bottom-color: #5649c1;
+}
+
+.icon.file.f-mp2,
+.icon.file.f-mp3,
+.icon.file.f-m3u,
+.icon.file.f-wma,
+.icon.file.f-xls,
+.icon.file.f-xlsx {
+	box-shadow: 1.74em -2.1em 0 0 #5bab6e inset;
+}
+.icon.file.f-mp2:after,
+.icon.file.f-mp3:after,
+.icon.file.f-m3u:after,
+.icon.file.f-wma:after,
+.icon.file.f-xls:after,
+.icon.file.f-xlsx:after {
+	border-bottom-color: #448353;
+}
+
+.icon.file.f-doc,
+.icon.file.f-docx,
+.icon.file.f-psd{
+	box-shadow: 1.74em -2.1em 0 0 #03689b inset;
+}
+
+.icon.file.f-doc:after,
+.icon.file.f-docx:after,
+.icon.file.f-psd:after {
+	border-bottom-color: #2980b9;
+}
+
+.icon.file.f-gif,
+.icon.file.f-jpg,
+.icon.file.f-jpeg,
+.icon.file.f-pdf,
+.icon.file.f-png {
+	box-shadow: 1.74em -2.1em 0 0 #e15955 inset;
+}
+.icon.file.f-gif:after,
+.icon.file.f-jpg:after,
+.icon.file.f-jpeg:after,
+.icon.file.f-pdf:after,
+.icon.file.f-png:after {
+	border-bottom-color: #c6393f;
+}
+
+.icon.file.f-deb,
+.icon.file.f-dmg,
+.icon.file.f-gz,
+.icon.file.f-rar,
+.icon.file.f-zip,
+.icon.file.f-7z {
+	box-shadow: 1.74em -2.1em 0 0 #867c75 inset;
+}
+.icon.file.f-deb:after,
+.icon.file.f-dmg:after,
+.icon.file.f-gz:after,
+.icon.file.f-rar:after,
+.icon.file.f-zip:after,
+.icon.file.f-7z:after {
+	border-bottom-color: #685f58;
+}
+
+.icon.file.f-html,
+.icon.file.f-rtf,
+.icon.file.f-xml,
+.icon.file.f-xhtml {
+	box-shadow: 1.74em -2.1em 0 0 #a94bb7 inset;
+}
+.icon.file.f-html:after,
+.icon.file.f-rtf:after,
+.icon.file.f-xml:after,
+.icon.file.f-xhtml:after {
+	border-bottom-color: #d65de8;
+}
+
+.icon.file.f-js {
+	box-shadow: 1.74em -2.1em 0 0 #d0c54d inset;
+}
+.icon.file.f-js:after {
+	border-bottom-color: #a69f4e;
+}
+
+.icon.file.f-css,
+.icon.file.f-saas,
+.icon.file.f-scss {
+	box-shadow: 1.74em -2.1em 0 0 #44afa6 inset;
+}
+.icon.file.f-css:after,
+.icon.file.f-saas:after,
+.icon.file.f-scss:after {
+	border-bottom-color: #30837c;
+}
+*/
