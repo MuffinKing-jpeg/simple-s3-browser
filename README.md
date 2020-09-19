@@ -1,6 +1,5 @@
-<p align='center'><image src="https://github.com/MuffinKing-jpeg/simple-s3-browser/raw/master/ssb.png" /></p>
-
-# simple-s3-browser
+<p align="center"><image src="https://github.com/MuffinKing-jpeg/simple-s3-browser/raw/master/ssb.png" /></p>
+<h2 align="center">Simple S3 Browser</h2>
 
 How to use?:
 * Download files and drop to your site root
